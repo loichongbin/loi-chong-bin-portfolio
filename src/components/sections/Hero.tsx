@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import {
   ArrowRight,
   Download,
@@ -204,12 +205,15 @@ export function Hero() {
               <div className="absolute -inset-4 rounded-full border border-orange-500/20 animate-spin-slow" />
               <div className="absolute -inset-8 rounded-full border border-orange-500/8" />
 
-              {/* Image placeholder — swap for real photo */}
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-orange-500/30 flex items-center justify-center overflow-hidden glow-orange-sm">
-                <div className="text-center">
-                  <div className="text-5xl font-black text-gray-600 font-mono tracking-wider">LCB</div>
-                  <div className="text-xs text-gray-600 mt-1 font-mono">Add profile.jpg</div>
-                </div>
+              {/* Profile photo */}
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full border-2 border-orange-500/30 overflow-hidden glow-orange-sm">
+                <Image
+                  src="/profile.png"
+                  alt="Loi Chong Bin — Bridge & Structural Design Engineer"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{ background: 'radial-gradient(circle at 30% 30%, rgba(249,115,22,0.08) 0%, transparent 70%)' }}

@@ -24,9 +24,22 @@ export function Contact() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    // Connect to Formspree/EmailJS/Resend in production — see DEPLOYMENT.md
-    await new Promise(r => setTimeout(r, 1800))
-    setStatus('sent')
+    try {
+      const res = await fetch('https://formspree.io/f/xdarnbzo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setStatus('sent')
+      } else {
+        setStatus('idle')
+        alert('Something went wrong. Please email me directly at loichongbin@gmail.com')
+      }
+    } catch {
+      setStatus('idle')
+      alert('Something went wrong. Please email me directly at loichongbin@gmail.com')
+    }
   }
 
   const base = 'w-full px-4 py-3 text-sm bg-stone-50 dark:bg-gray-800/70 border rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 outline-none transition-all duration-200'
