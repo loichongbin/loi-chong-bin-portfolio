@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* LIGHT MODE: warm concrete/blueprint feel */
+  body {
+    @apply bg-stone-50 text-gray-900;
+  }
+
+  /* DARK MODE: construction-site night — gray-900, NOT deep navy */
+  .dark body {
+    @apply bg-gray-900 text-gray-50;
+  }
+
+  ::selection {
+    background-color: rgba(249, 115, 22, 0.2);
+    color: inherit;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #111827; }
+  ::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #f97316; }
+}
+
+@layer utilities {
+  /* ── Engineering grid (blueprint paper) ── */
+  .engineering-grid {
+    background-image:
+      linear-gradient(rgba(249,115,22,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(249,115,22,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .engineering-grid-light {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .engineering-grid-fine {
+    background-image:
+      linear-gradient(rgba(249,115,22,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(249,115,22,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .engineering-dots {
+    background-image: radial-gradient(rgba(0,0,0,0.08) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+
+  .dark .engineering-dots {
+    background-image: radial-gradient(rgba(249,115,22,0.08) 1.5px, transparent 1.5px);
+  }
+
+  /* Blueprint paper light */
+  .blueprint-bg {
+    background-color: #f8f7f4;
+    background-image:
+      linear-gradient(rgba(14,165,233,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14,165,233,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* ── Construction warning stripe ── */
+  .warning-stripe {
+    background: repeating-linear-gradient(
+      -45deg,
+      #f97316,
+      #f97316 8px,
+      #111827 8px,
+      #111827 16px
+    );
+  }
+
+  /* ── Gradient text ── */
+  .text-gradient-orange {
+    @apply bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent;
+  }
+  .text-gradient-steel {
+    @apply bg-gradient-to-r from-sky-400 to-cyan-300 bg-clip-text text-transparent;
+  }
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-300 bg-clip-text text-transparent;
+  }
+
+  /* ── Card utilities ── */
+  .card-light {
+    @apply bg-white border border-stone-200 shadow-sm;
+  }
+  .card-dark {
+    @apply bg-gray-800 border border-gray-700;
+  }
+
+  /* ── Glow utilities ── */
+  .glow-orange-sm {
+    box-shadow: 0 0 12px rgba(249,115,22,0.25), 0 0 24px rgba(249,115,22,0.1);
+  }
+  .glow-orange {
+    box-shadow: 0 0 24px rgba(249,115,22,0.35), 0 0 48px rgba(249,115,22,0.15);
+  }
+  .glow-steel-sm {
+    box-shadow: 0 0 12px rgba(14,165,233,0.2), 0 0 24px rgba(14,165,233,0.08);
+  }
+
+  /* ── Section spacing ── */
+  .section-padding { @apply py-20 lg:py-28; }
+
+  /* ── Diagonal-cut hero divider ── */
+  .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); }
+}

@@ -1,0 +1,11 @@
+Place your profile photo here as 'profile.jpg' and your resume as 'resume.pdf'.
+
+Recommended profile photo:
+- Square or portrait format
+- Professional headshot
+- Minimum 400x400px
+- File name: profile.jpg
+
+Resume:
+- File name: resume.pdf
+- Will be linked from the Download Resume button
