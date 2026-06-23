@@ -116,11 +116,6 @@ const languages = [
   { lang: 'Malay',   level: 'Native', color: 'text-emerald-600 dark:text-emerald-400' },
 ]
 
-const allSoftware = [
-  'STRAP','MIDAS Civil','ADSEC','BEAMD','SAFE','CROSSEC',
-  'Tekla Tedds','SPACEGASS','ETABS','Prota','LUSAS',
-  'AutoCAD','ZWCAD','SketchUp','Revit','ArcGIS','SIDRA','Excel','Visio',
-]
 
 const container = {
   hidden: { opacity: 0 },
@@ -202,34 +197,14 @@ export function Skills() {
           })}
         </motion.div>
 
-        {/* Bottom strips */}
-        <div className="mt-8 grid sm:grid-cols-2 gap-5">
-          {/* All software */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.55, delay: 0.2 }}
-            className="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-stone-200 dark:border-gray-800"
-          >
-            <div className="text-xs font-bold text-gray-400 uppercase tracking-widest font-mono mb-4">
-              Software Proficiency
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {allSoftware.map(s => (
-                <span key={s} className="px-3 py-1.5 text-xs font-mono font-semibold text-gray-700 dark:text-gray-300 bg-stone-50 dark:bg-gray-800 border border-stone-200 dark:border-gray-700 rounded-lg hover:border-orange-500/40 hover:text-orange-600 dark:hover:text-orange-400 transition-colors cursor-default">
-                  {s}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
+        {/* Bottom strip */}
+        <div className="mt-8 max-w-sm">
           {/* Languages */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.55, delay: 0.3 }}
+            transition={{ duration: 0.55, delay: 0.2 }}
             className="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-stone-200 dark:border-gray-800"
           >
             <div className="text-xs font-bold text-gray-400 uppercase tracking-widest font-mono mb-4">

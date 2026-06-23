@@ -28,7 +28,7 @@ export function Contact() {
       const res = await fetch('https://formspree.io/f/xdarnbzo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _replyto: form.email }),
       })
       if (res.ok) {
         setStatus('sent')

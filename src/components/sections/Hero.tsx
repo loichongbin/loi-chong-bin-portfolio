@@ -211,12 +211,10 @@ export function Hero() {
                   src="/profile.png"
                   alt="Loi Chong Bin — Bridge & Structural Design Engineer"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   priority
-                />
-                <div
-                  className="absolute inset-0 rounded-full"
-                  style={{ background: 'radial-gradient(circle at 30% 30%, rgba(249,115,22,0.08) 0%, transparent 70%)' }}
+                  quality={100}
+                  sizes="(max-width: 640px) 224px, 256px"
                 />
               </div>
 
